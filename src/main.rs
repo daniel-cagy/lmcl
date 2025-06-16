@@ -12,16 +12,16 @@ fn main() -> Result<(), Box<dyn std::error::Error>>{
     let output_path = format!("{}.html", file_name);
 
     // Reading and processing the input file .lmcl
-    let code = fs::read_to_string(&input_path).expect("Failed to read file.");
+    let code = fs::read_to_string(&input_path)?;
     let code_lines: Vec<String> = reader::store_valid_lines(&code)?;
     let html_code = parser::parse_lines(code_lines)?;
 
     // Creating and writing the output file .html
-    let file = OpenOptions::new()
+    let mut file = OpenOptions::new()
         .write(true)
         .truncate(true)
         .create(true)
-        .open(&output_path);
-    write!(file.expect("Unable to create file {&output_path}."), "{html_code}")?;
+        .open(&output_path)?;
+    write!(file, "{}", html_code)?;
     Ok(())
 }

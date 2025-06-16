@@ -6,11 +6,11 @@
 ![Status](https://img.shields.io/badge/status-unstable-black)
 
 
-LMCL (Lite Markdown Coding Language) is a simple markdown language that compiles to HTML. Its compiler, called 'hallo', is being developed in Rust.
+LMCL (Lite Markup Coding Language) is a simple markup language that compiles to HTML. Its compiler, named 'Hallo', is being developed in Rust.
 
-My goal with this project was to create a markdown language that's more familiar to programming languages in general. It's also a learning project to explore Rust, and how to manipulate strings and files.
+My goal with this project was to create a markup language that's more familiar to programming languages in general. It's also a learning project to explore Rust, and how to manipulate strings and files.
 
-This is an early-stage version of the 'hallo' compiler, and syntax changes might occur.
+This is an early-stage version of the 'Hallo' compiler, and syntax changes might occur.
 
 ## Code example
 - LMCL code:
@@ -115,7 +115,7 @@ This will compile the file.lmcl to file.html in the same directory. If your '.lm
 ## Contact
 If you experience any problems using the program, feel free to contact me by my email (cagydaniel@gmail.com).
 
-## Future releases
+## Planned Features
 I'm planning to implement for the next versions some improvements such as:
 - Support to simple and static logic operations
 - Support to linking to CSS and JavaScript files

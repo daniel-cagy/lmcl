@@ -4,14 +4,14 @@ pub fn store_valid_lines(code: &str) -> Result<Vec<String>, String>{
     let mut valid_lines: Vec<String> = Vec::new();
     for (line_num, line) in code.lines().enumerate(){
         let line = line.trim();
-        if is_line_valid(line_num as u16, &line)?{
+        if check_line_syntax(line_num, &line)?{
             valid_lines.push(line.to_string());
         }
     }
     return Ok(valid_lines);
 }
 
-fn is_line_valid(line_num: u16, line: &str) -> Result<bool, String>{
+fn check_line_syntax(line_num: usize, line: &str) -> Result<bool, String>{
     // Ignore empty lines or comments
     if line.is_empty() || line.starts_with("//"){
         Ok(false)
